@@ -1,0 +1,386 @@
+/* CSS RESET */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* CUSTOM CODE */
+body {
+  background-image: url("images/pattern-background-desktop.svg");
+  background-repeat: repeat-x;
+  background-color: #e0e8ff;
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 16px;
+  height: 100vh;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (max-width: 375px) {
+  body {
+    background-image: url("images/pattern-background-mobile.svg");
+  }
+}
+
+.card {
+  margin: auto;
+  background-color: #fff;
+  max-width: 450px;
+  border-radius: 25px;
+  -webkit-box-shadow: 1px 6px 30px -9px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 6px 30px -9px rgba(0, 0, 0, 0.2);
+}
+
+.card .card__image {
+  max-width: 100%;
+  border-radius: 25px 25px 0 0;
+}
+
+.card h1 {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #1f2f56;
+  margin: 3rem 2rem 2rem;
+}
+
+.card p {
+  color: #7280a7;
+  line-height: 1.5;
+  margin: 0 3rem;
+}
+
+.card .card__options {
+  margin: 2rem;
+}
+
+.card .card__options .options__payment-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f5f7ff;
+  padding: 1.5rem;
+  border-radius: 15px;
+}
+
+.card .card__options .options__payment-info div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card .card__options .options__payment-info div .options__payment-info__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 1rem;
+  text-align: left;
+}
+
+.card .card__options .options__payment-info div .options__payment-info__text h3 {
+  font-weight: 900;
+  color: #1f2f56;
+  margin-bottom: 0.2rem;
+}
+
+.card .card__options .options__payment-info div .options__payment-info__text p {
+  margin: 0;
+}
+
+.card .card__options .options__payment-info button {
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: 16px;
+  color: #3829e0;
+  font-weight: 700;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+  border-bottom: 0.5px solid #3829e0;
+  padding: 0;
+}
+
+.card .card__options .options__payment-info button:hover {
+  cursor: pointer;
+  border-bottom: 0.5px solid transparent;
+  opacity: 0.8;
+}
+
+.card .card__options .proceed-btn {
+  border: none;
+  width: 100%;
+  background-color: #3829e0;
+  color: #fff;
+  padding: 1rem;
+  margin: 2rem 0;
+  border-radius: 15px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+  -webkit-box-shadow: 1px 6px 30px -9px rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 6px 30px -9px rgba(0, 0, 0, 0.3);
+}
+
+.card .card__options .proceed-btn:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.card .card__options .cancel-btn {
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  color: #7280a7;
+  font-size: 16px;
+  font-weight: 700;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.card .card__options .cancel-btn:hover {
+  cursor: pointer;
+  color: #1f2f56;
+}
+
+@media screen and (max-width: 520px) {
+  .card {
+    width: 80vw;
+  }
+  .card h1 {
+    font-size: 1.5rem;
+    margin: 2rem 1rem 1rem;
+  }
+  .card p {
+    margin: 0 2rem;
+  }
+  .card .card__options .options__payment-info {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+  .card .card__options .options__payment-info .change-btn {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .card {
+    width: 80vw;
+    border-radius: 15px;
+  }
+  .card .card__image {
+    border-radius: 15px 15px 0 0;
+  }
+  .card h1 {
+    font-size: 1.2rem;
+    margin: 2rem 1rem 1rem;
+  }
+  .card p {
+    margin: 0 2rem;
+    font-size: 14px;
+  }
+  .card .card__options .options__payment-info {
+    padding: 0.8rem;
+    font-size: 0.8rem;
+  }
+  .card .card__options .options__payment-info img {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  .card .card__options .options__payment-info p {
+    font-size: 0.8rem;
+  }
+  .card .card__options .options__payment-info .change-btn {
+    font-size: 12px;
+  }
+  .card .card__options .proceed-btn {
+    padding: 0.8rem;
+    font-size: 0.8rem;
+    border-radius: 10px;
+  }
+  .card .card__options .cancel-btn {
+    font-size: 0.8rem;
+  }
+}
+
+.attribution {
+  display: block;
+  color: #7280a7;
+  margin: 2rem auto;
+}
+
+.attribution a {
+  text-decoration: none;
+  color: #1f2f56;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 520px) {
+  .attribution {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .attribution {
+    font-size: 0.8rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */

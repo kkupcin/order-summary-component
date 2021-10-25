@@ -1,0 +1,367 @@
+/* CSS RESET */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* CUSTOM CODE */
+
+$primaryPaleClr: hsl(225, 100%, 94%);
+$primaryBrightClr: hsl(245, 75%, 52%);
+
+$neutralLightClr: hsl(225, 100%, 98%);
+$neutralDesatClr: hsl(224, 23%, 55%);
+$neutralDarkClr: hsl(223, 47%, 23%);
+
+$defaultFontSize: 16px;
+$defaultTransition: all 0.2s ease-in-out;
+
+body {
+  background-image: url("images/pattern-background-desktop.svg");
+  background-repeat: repeat-x;
+  background-color: $primaryPaleClr;
+  font-family: "Red Hat Display", sans-serif;
+  font-size: $defaultFontSize;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  @media screen and (max-width: 375px) {
+    background-image: url("images/pattern-background-mobile.svg");
+  }
+}
+
+.card {
+  margin: auto;
+  background-color: #fff;
+  max-width: 450px;
+  border-radius: 25px;
+  box-shadow: 1px 6px 30px -9px rgba(0, 0, 0, 0.2);
+
+  .card__image {
+    max-width: 100%;
+    border-radius: 25px 25px 0 0;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: $neutralDarkClr;
+    margin: 3rem 2rem 2rem;
+  }
+
+  p {
+    color: $neutralDesatClr;
+    line-height: 1.5;
+    margin: 0 3rem;
+  }
+
+  .card__options {
+    margin: 2rem;
+
+    .options__payment-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: $neutralLightClr;
+      padding: 1.5rem;
+      border-radius: 15px;
+
+      div {
+        display: flex;
+        align-items: center;
+
+        .options__payment-info__text {
+          display: flex;
+          flex-direction: column;
+          margin-left: 1rem;
+          text-align: left;
+
+          h3 {
+            font-weight: 900;
+            color: $neutralDarkClr;
+            margin-bottom: 0.2rem;
+          }
+
+          p {
+            margin: 0;
+          }
+        }
+      }
+
+      button {
+        border: none;
+        background-color: transparent;
+        font-family: inherit;
+        font-size: $defaultFontSize;
+        color: $primaryBrightClr;
+        font-weight: 700;
+        transition: $defaultTransition;
+        opacity: 1;
+        border-bottom: 0.5px solid $primaryBrightClr;
+        padding: 0;
+
+        &:hover {
+          cursor: pointer;
+          border-bottom: 0.5px solid transparent;
+          opacity: 0.8;
+        }
+      }
+    }
+
+    .proceed-btn {
+      border: none;
+      width: 100%;
+      background-color: $primaryBrightClr;
+      color: #fff;
+      padding: 1rem;
+      margin: 2rem 0;
+      border-radius: 15px;
+      font-family: inherit;
+      font-weight: 700;
+      font-size: $defaultFontSize;
+      transition: $defaultTransition;
+      opacity: 1;
+      box-shadow: 1px 6px 30px -9px rgba(0, 0, 0, 0.3);
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+      }
+    }
+
+    .cancel-btn {
+      border: none;
+      background: transparent;
+      font-family: inherit;
+      color: $neutralDesatClr;
+      font-size: $defaultFontSize;
+      font-weight: 700;
+      transition: $defaultTransition;
+
+      &:hover {
+        cursor: pointer;
+        color: $neutralDarkClr;
+      }
+    }
+  }
+
+  @media screen and (max-width: 520px) {
+    width: 80vw;
+
+    h1 {
+      font-size: 1.5rem;
+      margin: 2rem 1rem 1rem;
+    }
+
+    p {
+      margin: 0 2rem;
+    }
+
+    .card__options {
+      .options__payment-info {
+        padding: 1rem;
+        font-size: 0.9rem;
+
+        .change-btn {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 375px) {
+    width: 80vw;
+    border-radius: 15px;
+
+    .card__image {
+      border-radius: 15px 15px 0 0;
+    }
+
+    h1 {
+      font-size: 1.2rem;
+      margin: 2rem 1rem 1rem;
+    }
+
+    p {
+      margin: 0 2rem;
+      font-size: 14px;
+    }
+
+    .card__options {
+      .options__payment-info {
+        img {
+          transform: scale(0.8);
+        }
+        padding: 0.8rem;
+        font-size: 0.8rem;
+
+        p {
+          font-size: 0.8rem;
+        }
+
+        .change-btn {
+          font-size: 12px;
+        }
+      }
+
+      .proceed-btn {
+        padding: 0.8rem;
+        font-size: 0.8rem;
+        border-radius: 10px;
+      }
+
+      .cancel-btn {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+.attribution {
+  display: block;
+  color: $neutralDesatClr;
+  margin: 2rem auto;
+
+  a {
+    text-decoration: none;
+    color: $neutralDarkClr;
+    font-weight: 700;
+  }
+
+  @media screen and (max-width: 520px) {
+    font-size: 0.9rem;
+  }
+
+  @media screen and (max-width: 375px) {
+    font-size: 0.8rem;
+  }
+}
